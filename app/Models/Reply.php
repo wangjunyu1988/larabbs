@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\User;
 
 class Reply extends Model
 {

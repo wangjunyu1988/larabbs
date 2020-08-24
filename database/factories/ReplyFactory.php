@@ -9,6 +9,7 @@ $factory->define(App\Models\Reply::class, function (Faker $faker) {
         'content' => $faker->sentence(),
         'created_at'=>$time,
         'updated_at'=>rand(1,100),
+        'topic_id'=>rand(1,100),
         'user_id'=>rand(1,10)
     ];
 });
