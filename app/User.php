@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use App\Models\Topic;
+use App\Models\Reply;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
@@ -15,6 +16,10 @@ class User extends Authenticatable implements MustVerifyEmailContract
     protected $fillable = [
         'name', 'email', 'password','introduction','avatar'
     ];
+
+    public function replies(){
+        return $this->hasMany(Reply::class);
+    }
 
     protected $hidden = [
         'password', 'remember_token',
